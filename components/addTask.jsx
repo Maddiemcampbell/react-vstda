@@ -35,7 +35,7 @@ class AddTask extends Component {
                 <input name='description' value={this.state.taskDescription} onChange={this.handleChange} placeholder='add your task!' />
                 <select>
                     <option value={1}>Low Priority</option>
-                    <option value={1}>Medium Priority</option>
+                    <option value={2}>Medium Priority</option>
                     <option value={3}>High Priority</option>
                     <button onClick={this.submit}>
                         Add
