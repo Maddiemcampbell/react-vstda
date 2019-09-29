@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import AddTask from '../components/addTask';
 
 class App extends Component {
   constructor(props){
@@ -10,6 +11,7 @@ class App extends Component {
     }
   }
 
+
   render() {
     return (
       <div className='container'>
@@ -17,7 +19,9 @@ class App extends Component {
         <ul>
           <li>{this.state.userList}</li>
         </ul>
-        <button>Add New Task</button>
+        <Link to="/addTask" component={AddTask}>
+          <button>Add New Task</button>
+        </Link>
       </div>
     );
   }

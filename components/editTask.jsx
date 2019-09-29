@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class App extends Component {
+class EditTask extends Component {
 
     constructor(props){
         super(props);
@@ -41,4 +41,4 @@ class App extends Component {
     }
 }
 
-export default App;
+export default EditTask;
