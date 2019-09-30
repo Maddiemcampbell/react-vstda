@@ -56,29 +56,31 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h1>
-          Add New Task
-        </h1>
-        <label>
-          I want to...
-        </label>
-        <textarea rows="5" className="textArea" type="textarea"/>
+        <div className='wrapper'>
+        <h1>Add New Task</h1>
+          <label id='labelInput'>
+            I want to...
+          </label>
+          <textarea rows="5" className="textArea" type="textarea" placeholder='add new task here' />
 
-        <div className='sel sel--black-panther'>
-        <select name="select-profession" id="select-profession dropdown-basic-button" className='form-control'>
-          <option value="" disabled>Priorities</option>
-          <option value={1}>Low Priority</option>
-          <option value={2}>Medium Priority</option>
-          <option value={3}>High Priority</option>
-        </select>
+          <div className='select'>
+            <select name="select-profession" id="select-profession dropdown-basic-button" className='form-control'>
+              <option value="" disabled>Priorities</option>
+              <option value={1}>Low Priority</option>
+              <option value={2}>Medium Priority</option>
+              <option value={3}>High Priority</option>
+            </select>
+            <div className="select_arrow">
+            </div>
+          </div>
+
+          <button className='butn' onClick={this.submit}>
+            Add
+        </button>
+          <button className='butn'>
+            View To Do
+        </button>
         </div>
-
-        <button className='butn' onClick={this.submit}>
-          Add
-        </button>
-        <button className='butn'>
-          View To Do
-        </button>
       </div>
     )
   }

@@ -2,6 +2,7 @@ body {
   background: hsl(40, 40%, 87%);
   text-align: center;
   font-family: arial;
+  color: #46413c;
 }
 
 .no-padding {
@@ -20,16 +21,12 @@ body {
   text-decoration: line-through;
 }
 
-textarea {
-  width: 100%;
-  max-width: 100%;
-  min-height: 8em;
-  max-height: 16em;
-
+#labelInput{
+  text-align: left;
 }
 
-strong + small {
-    display: block;
+strong+small {
+  display: block;
 }
 
 input[type=checkbox] {
@@ -46,13 +43,115 @@ div.pull-right a {
   border-radius: 16px;
   font-family: Arial;
   color: #ffffff;
-  font-size: 20px;
+  font-size: 15px;
   background: #bdafa2;
   padding: 10px 20px 10px 20px;
+  margin-bottom: 15px;
   text-decoration: none;
+  width: 125px;
+  height: 40px;
+  align-self: center;
 }
 
 .butn:hover {
   background: #806f60;
   text-decoration: none;
 }
+
+.select {
+  position: relative;
+  display: inline-block;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  width: 125px;
+  align-self: center;
+}
+
+.select select {
+  font-family: 'Arial';
+  display: inline-block;
+  width: 100%;
+  cursor: pointer;
+  padding: 10px 15px;
+  outline: 0;
+  border: 0px solid #000000;
+  border-radius: 13px;
+  background: #bdafa2;
+  color: #ffffff;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.select select::-ms-expand {
+  display: none;
+}
+
+.select select:hover,
+.select select:focus {
+  background: #806f60;
+  color: #ffffff;
+}
+
+.select select:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.select_arrow {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  width: 10px;
+  height: 10px;
+  border: solid #ffffff;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+.select select:hover~.select_arrow,
+.select select:focus~.select_arrow {
+  border-color: #f9f9f9;
+}
+
+.select select:disabled~.select_arrow {
+  border-top-color: #cccccc;
+}
+
+.wrapper {
+  background: white;
+  border-radius: 15px;
+  display: flex;
+  width: 400px;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.textArea {
+  border: 3px solid #806f60;
+  border-radius: 10px;
+  width: 300px;
+  height: 80px;
+  outline: none;
+  resize: none;
+  margin: auto;
+}
+
+@media (max-width: 600px) {
+  .wrapper {
+      width: 90vw;
+      text-align: center;
+      align-self: center;
+      font-size: 90%;
+
+  }
+  .textArea{
+    width: 270px;
+  }
+}
+
+
