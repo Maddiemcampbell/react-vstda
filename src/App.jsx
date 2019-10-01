@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ToDoList from './components/toDoList';
 
 class App extends Component {
   constructor(props) {
@@ -26,7 +27,8 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className='app'>
+        <ToDoList />
         <div className='wrapper'>
         <h1>Add New Task</h1>
           <label id='labelInput'>
@@ -47,8 +49,9 @@ class App extends Component {
 
           <button className='butn' onClick={this.submit}>
             Add
-        </button>
+          </button>
         </div>
+        
       </div>
     )
   }
