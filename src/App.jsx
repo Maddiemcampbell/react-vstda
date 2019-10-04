@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
+import ToDoTask from './components/toDoTask';
 import ToDoList from './components/toDoList';
-import AddTask from './components/addTask';
 
 class App extends Component {
+  
   render() {
     return (
       <div className='app'>
+        <ToDoTask/>
         <ToDoList />
-        <AddTask />
       </div>
     )
   }

@@ -10,11 +10,18 @@ class ToDoList extends React.Component {
             <div>
                 <div className='wrapper'>
                     <h2>To Do List</h2>
-                    <ToDoTask />
+                    <ul>
+                        {this.props.taskList.map(todo => (
+                            <ToDoTask
+                                key = {todo.id}
+                                todo = {newTask}
+                            />
+                        ))}
+                    </ul>
                 </div>
             </div>
-        );
-    }
+            );
+            }
 }
-
+            
 export default ToDoList;
