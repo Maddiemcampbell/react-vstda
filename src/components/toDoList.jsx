@@ -7,7 +7,18 @@ class ToDoList extends React.Component {
     }
     render() {
         return (
-            <div>
+            <div className='app'>
+                <div className='wrapper'>
+                    <h2>To Do List</h2>
+                    <div>
+                        <ul className='listWrapper'>
+                            <li>Some task</li>
+                            <li>Another task</li>
+                            <li>More Tasks</li>
+                        </ul>
+                    </div>
+
+                </div>
                 {/* <div className='wrapper'>
                     <h2>To Do List</h2>
                     <ul>
@@ -20,8 +31,8 @@ class ToDoList extends React.Component {
                     </ul>
                 </div> */}
             </div>
-            );
-            }
+        );
+    }
 }
-            
+
 export default ToDoList;
