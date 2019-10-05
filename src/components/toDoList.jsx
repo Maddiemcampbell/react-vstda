@@ -12,9 +12,18 @@ class ToDoList extends React.Component {
                     <h2>To Do List</h2>
                     <div>
                         <ul className='listWrapper'>
-                            <li>Some task</li>
-                            <li>Another task</li>
-                            <li>More Tasks</li>
+                            <li>Some task 
+                                <button className ='edit babyButn'>Edit</button> 
+                                <button className ='babyButn'>Delete</button>
+                            </li>
+                            <li>Another task
+                                <button className ='edit babyButn'>Edit</button> 
+                                <button className='babyButn'>Delete</button>
+                            </li>
+                            <li>More Tasks
+                                <button className ='edit babyButn'>Edit</button> 
+                                <button className ='babyButn'>Delete</button>
+                            </li>
                         </ul>
                     </div>
 
