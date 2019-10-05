@@ -8,17 +8,17 @@ class ToDoList extends React.Component {
     render() {
         return (
             <div>
-                <div className='wrapper'>
+                {/* <div className='wrapper'>
                     <h2>To Do List</h2>
                     <ul>
                         {this.props.taskList.map(todo => (
                             <ToDoTask
                                 key = {todo.id}
-                                todo = {newTask}
+                                newTask = {newTask}
                             />
                         ))}
                     </ul>
-                </div>
+                </div> */}
             </div>
             );
             }

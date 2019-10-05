@@ -6,47 +6,40 @@ class ToDoTask extends Component {
         super(props);
 
         this.state = {
-            newTask: '',
             priority: '',
-            taskList: [],
+            newTask: '',
+            id: 0,
         }
         this.handleChange = this.handleChange.bind(this);
-        this.handleAddTask = this.handleAddTask.bind(this);
+        this.handleSubmitAdd = this.handleSubmitAdd.bind(this);
     }
 
     handleChange(e) {
         this.setState({ [e.target.name]: e.target.value });
     }
 
-    handleAddTask(){
-       const newTask = {
-           id: 1 + Math.random,
-           value: this.state.newTask.slice()
-       };
-
-       const taskList = [...this.state.taskList];
-
-       taskList.push(newTask);
-
-       this.setState({
-            newTask: newTask,
-            taskList: taskList    
-       })
-   }
+    handleSubmitAdd() {
+        this.props.handleAddTask(this.state);
+        this.setState({
+            id: this.state.id+1,
+            newTask: '',
+            priority: '',
+        })
+    }
 
     render() {
         return (
-            
+
             <div className='wrapper'>
                 <h1>Add New Task</h1>
-                
+
                 <label id='labelInput'>
                     I want to...
                 </label>
-                <textarea value={this.state.newTask} rows='5' className='textArea' type='textarea' placeholder='add new task here' />
+                <textarea value={this.state.newTask} onChange={this.handleChange} rows='5' className='textArea' type='textarea' placeholder='add new task here' />
 
                 <div className='select'>
-                    <select value={this.state.priority} id='dropdown-basic-button' className='form-control'>
+                    <select value={this.state.priority} onChange={this.handleChange} id='dropdown-basic-button' className='form-control'>
                         <option value='' disabled>Priorities</option>
                         <option value={1}>Low Priority</option>
                         <option value={2}>Medium Priority</option>
@@ -56,10 +49,10 @@ class ToDoTask extends Component {
                     </div>
                 </div>
 
-                <button className='butn' onClick={this.handleAddTask}>
+                <button className='butn' onClick={this.handleSubmitAdd}>
                     Add
                 </button>
-           
+
             </div>
         )
     }
