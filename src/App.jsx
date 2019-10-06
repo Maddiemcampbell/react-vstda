@@ -11,12 +11,12 @@ class App extends Component {
     this.handleAddTask = this.handleAddTask.bind(this);
   }
 
-  handleAddTask() {
+  handleAddTask(newTask) {
     let taskList = [...this.state.taskList];
     
     taskList.push(newTask);
     
-    this.setState({ taskList })
+    this.setState({taskList});
   }
 
   render() {

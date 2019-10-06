@@ -10,21 +10,27 @@ class ToDoTask extends Component {
             newTask: '',
             id: 0,
         }
-        this.handleChange = this.handleChange.bind(this);
+        this.handleTask = this.handleTask.bind(this);
+        this.handlePriority = this.handlePriority.bind(this)
         this.handleSubmitAdd = this.handleSubmitAdd.bind(this);
     }
 
-    handleChange(e) {
-        this.setState({ [e.target.name]: e.target.value });
+    handleTask(e){
+        this.setState({newTask: e.target.value});
+    }
+    
+    handlePriority(e){
+        this.setState({priority: e.target.value});
     }
 
     handleSubmitAdd() {
         this.props.handleAddTask(this.state);
         this.setState({
-            id: this.state.id+1,
+            id: Math.random()+1,
             newTask: '',
             priority: '',
-        })
+        });
+        console.log('handle submit working')
     }
 
     render() {
@@ -36,10 +42,10 @@ class ToDoTask extends Component {
                 <label id='labelInput'>
                     I want to...
                 </label>
-                <textarea value={this.state.newTask} onChange={this.handleChange} rows='5' className='textArea' type='textarea' placeholder='add new task here' />
+                <textarea value={this.state.newTask} onChange={this.handleTask} rows='5' className='textArea' type='textarea' placeholder='add new task here' />
 
                 <div className='select'>
-                    <select value={this.state.priority} onChange={this.handleChange} id='dropdown-basic-button' className='form-control'>
+                    <select value={this.state.priority} onChange={this.handlePriority} id='dropdown-basic-button' className='form-control' placeholder='Select a Priority' required>
                         <option value='' disabled>Priorities</option>
                         <option value={1}>Low Priority</option>
                         <option value={2}>Medium Priority</option>
