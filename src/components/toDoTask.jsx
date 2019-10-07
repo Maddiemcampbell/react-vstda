@@ -9,6 +9,7 @@ class ToDoTask extends Component {
             priority: '',
             newTask: '',
             id: 0,
+            isEditable: false,
         }
         this.handleTask = this.handleTask.bind(this);
         this.handlePriority = this.handlePriority.bind(this)

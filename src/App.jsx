@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ToDoTask from './components/toDoTask';
 import ToDoList from './components/toDoList';
+import EditForm from './components/editForm';
 import TaskItem from './components/taskItem';
 
 class App extends Component {
@@ -31,6 +32,16 @@ class App extends Component {
    console.log(newList)
   }
 
+  editTask(id){
+    let item = this.state.list.find(item => item.id===id);
+
+      this.setState({
+        mode: 'edit',
+        selectedId: id,
+        selectedItem: item,
+        alert: 'off'   
+      }); 
+  }
 
   render() {
     return (
@@ -39,6 +50,7 @@ class App extends Component {
         <ToDoList 
         taskList={this.state.taskList} 
         deleteTask={this.deleteTask}
+        editTask={this.editTask}
         />
       </div>
     )
