@@ -24,13 +24,13 @@ class ToDoTask extends Component {
     }
 
     handleSubmitAdd() {
-        this.props.handleAddTask(this.state);
+        this.props.addTask(this.state);
+        
         this.setState({
-            id: Math.random()+1,
-            newTask: '',
             priority: '',
-        });
-        console.log('handle submit working')
+            newTask: '',   
+            id: Math.random()+1,     
+         });
     }
 
     render() {
