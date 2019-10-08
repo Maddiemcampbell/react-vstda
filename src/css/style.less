@@ -10,6 +10,11 @@ body {
   flex-direction: row;
 }
 
+input[type=checkbox].complete.button:checked + p{
+  text-decoration: line-through;	  
+  text-decoration: line-through;
+}	
+
 .no-padding {
   padding: 0 !important;
 }
@@ -162,23 +167,9 @@ div.pull-right a {
 }
 
 .listWrapper{
-  display:flex;
-  flex-direction: column;
-  align-content: left;
-}
-
-ul {
-  list-style-type: none;
-  padding-inline-start: 5px;
-  padding-inline-end: 5px;
-  text-align: left;
-}
-
-ul li{
-  background: rgb(247, 235, 219);
-  padding: 5px;
-  border-radius: 5px;
-  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .edit{
@@ -203,6 +194,7 @@ ul li{
 .babyButn:focus {
   outline:0
 }
+
 @media (max-width: 600px) {
   .wrapper {
       width: 90vw;

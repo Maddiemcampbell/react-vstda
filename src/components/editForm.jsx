@@ -46,9 +46,9 @@ class EditForm extends Component {
             <div className='select'>
                     <select onChange={this.handleEditPriority} id='dropdown-basic-button' className='form-control' placeholder='Select a Priority' required>
                         <option value='' disabled>Priorities</option>
-                        <option value={'#29a329'}>Low Priority</option>
-                        <option value={'#ffff99'}>Medium Priority</option>
-                        <option value={'#ff4d4d'}>High Priority</option>
+                        <option value={'#F7F89C'}>Low Priority</option>
+                        <option value={'#CCFF99'}>Medium Priority</option>
+                        <option value={'#FFA799'}>High Priority</option>
                     </select>
                     <div className='select_arrow'>
                     </div>
