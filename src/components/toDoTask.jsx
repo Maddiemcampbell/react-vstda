@@ -36,7 +36,7 @@ class ToDoTask extends Component {
     render() {
         return (
 
-            <div className='wrapper'>
+            <div className='wrapper todo'>
                 <h1>Add New Task</h1>
 
                 <label id='labelInput'>
@@ -55,7 +55,7 @@ class ToDoTask extends Component {
                     </div>
                 </div>
 
-                <button className='butn' onClick={this.handleSubmitAdd}>
+                <button className='butn create-todo' onClick={this.handleSubmitAdd}>
                     Add
                 </button>
 

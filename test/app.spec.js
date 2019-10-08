@@ -18,7 +18,7 @@ app.listen(8080);
 const url = 'http://localhost:8080';
 
 describe('Very Simple To Do App', function main() {
-  this.timeout(12000);
+  this.timeout(20000);
   this.slow(4000);
 
   beforeEach(() => {

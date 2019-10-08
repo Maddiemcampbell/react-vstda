@@ -8,8 +8,8 @@ class TaskItem extends Component{
             <div className='listWrapper' style={{background: this.props.priority}}>
                 <input type='checkbox' id='complete' className='complete-button strike-through'/>
                 <p>{this.props.description}</p>
-                <button className='babyButn' onClick={()=> {this.props.deleteTask(this.props.id)}}>Delete</button>
-                <button className='babyButn' onClick={()=> {this.props.editTask(this.props.id)}}>Edit</button>
+                <button className='smallButn delete-todo' onClick={()=> {this.props.deleteTask(this.props.id)}}>Delete</button>
+                <button className='smallButn edit-todo' onClick={()=> {this.props.editTask(this.props.id)}}>Edit</button>
             </div>
         )
     }
