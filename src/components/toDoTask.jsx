@@ -7,9 +7,8 @@ class ToDoTask extends Component {
 
         this.state = {
             priority: '',
-            newTask: '',
+            descriprion: '',
             id: 0,
-            isEditable: false,
         }
         this.handleTask = this.handleTask.bind(this);
         this.handlePriority = this.handlePriority.bind(this)
@@ -17,7 +16,7 @@ class ToDoTask extends Component {
     }
 
     handleTask(e){
-        this.setState({newTask: e.target.value});
+        this.setState({description: e.target.value});
     }
     
     handlePriority(e){
@@ -29,7 +28,7 @@ class ToDoTask extends Component {
         
         this.setState({
             priority: '',
-            newTask: '',   
+            description: '',   
             id: Math.random()+1,     
          });
     }
@@ -43,14 +42,14 @@ class ToDoTask extends Component {
                 <label id='labelInput'>
                     I want to...
                 </label>
-                <textarea value={this.state.newTask} onChange={this.handleTask} rows='5' className='textArea' type='textarea' placeholder='add new task here' />
+                <textarea value={this.state.description} onChange={this.handleTask} rows='5' className='textArea' type='textarea' placeholder='add new task here' />
 
                 <div className='select'>
                     <select value={this.state.priority} onChange={this.handlePriority} id='dropdown-basic-button' className='form-control' placeholder='Select a Priority' required>
                         <option value='' disabled>Priorities</option>
-                        <option value={1}>Low Priority</option>
-                        <option value={2}>Medium Priority</option>
-                        <option value={3}>High Priority</option>
+                        <option value={'#29a329'}>Low Priority</option>
+                        <option value={'#ffff99'}>Medium Priority</option>
+                        <option value={'#ff4d4d'}>High Priority</option>
                     </select>
                     <div className='select_arrow'>
                     </div>

@@ -4,20 +4,21 @@ class EditForm extends Component {
     constructor(props){
         super(props);
         this.state ={
-            selectedTask: this.props.selectedTask,
-            editDescription: this.props.selectedTask.newTask,
-            editPriority: this.props.selectedTask.priority
+            priority: this.props.priority,
+            description: this.props.description
         }
+        this.handleEditClick = this.handleEditClick.bind(this);
+        this.handleEditDescription = this.handleEditDescription.bind(this);
+        this.handleEditPriority = this.handleEditPriority.bind(this);
     }
 
     handleEditClick(){
-        let item = {
+        let task = {
             id: this.props.selectedId,
-            description: this.state.editDescription,
-            priority: this.state.editPriority,
-            isEditable: true
+            description: this.state.description,
+            priority: this.state.priority
         }
-        this.props.editTask(item);
+        this.props.changeTask(task.id, task);
     }
 
     hanleEditDescription(e){
@@ -40,14 +41,14 @@ class EditForm extends Component {
                 I want to...
             </label>
             
-            <textarea value={this.state.newTask} onChange={this.handleTask} rows='5' className='textArea' type='textarea' placeholder='add new task here' />
+            <textarea value={this.state.description} onChange={this.handleEditDescription} rows='5' className='textArea' type='textarea' placeholder='add new task here' />
             
             <div className='select'>
-                    <select value={this.state.priority} onChange={this.handlePriority} id='dropdown-basic-button' className='form-control' placeholder='Select a Priority' required>
+                    <select onChange={this.state.handleEditPriority} id='dropdown-basic-button' className='form-control' placeholder='Select a Priority' required>
                         <option value='' disabled>Priorities</option>
-                        <option value={1}>Low Priority</option>
-                        <option value={2}>Medium Priority</option>
-                        <option value={3}>High Priority</option>
+                        <option value={'#29a329'}>Low Priority</option>
+                        <option value={'#ffff99'}>Medium Priority</option>
+                        <option value={'#ff4d4d'}>High Priority</option>
                     </select>
                     <div className='select_arrow'>
                     </div>
