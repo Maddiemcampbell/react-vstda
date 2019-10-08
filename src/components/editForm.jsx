@@ -21,15 +21,15 @@ class EditForm extends Component {
         this.props.changeTask(task.id, task);
     }
 
-    hanleEditDescription(e){
+    handleEditDescription(e){
         this.setState({
-            editDescription: e.target.value
+            description: e.target.value
         })
     }
 
     handleEditPriority(e){
         this.setState({
-            editPriority: e.target.value
+            priority: e.target.value
         })
     }
 
@@ -44,7 +44,7 @@ class EditForm extends Component {
             <textarea value={this.state.description} onChange={this.handleEditDescription} rows='5' className='textArea' type='textarea' placeholder='add new task here' />
             
             <div className='select'>
-                    <select onChange={this.state.handleEditPriority} id='dropdown-basic-button' className='form-control' placeholder='Select a Priority' required>
+                    <select onChange={this.handleEditPriority} id='dropdown-basic-button' className='form-control' placeholder='Select a Priority' required>
                         <option value='' disabled>Priorities</option>
                         <option value={'#29a329'}>Low Priority</option>
                         <option value={'#ffff99'}>Medium Priority</option>
