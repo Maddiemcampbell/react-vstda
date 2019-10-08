@@ -41,7 +41,7 @@ class EditForm extends Component {
                 I want to...
             </label>
             
-            <textarea value={this.state.description} onChange={this.handleEditDescription} rows='5' className='textArea' type='textarea' placeholder='add new task here' />
+            <textarea value={this.state.description} onChange={this.handleEditDescription} rows='5' className='textArea update-todo-text' type='textarea' placeholder='add new task here' />
             
             <div className='select'>
                     <select onChange={this.handleEditPriority} id='dropdown-basic-button' className='form-control' placeholder='Select a Priority' required>

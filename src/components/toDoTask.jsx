@@ -42,10 +42,10 @@ class ToDoTask extends Component {
                 <label id='labelInput'>
                     I want to...
                 </label>
-                <textarea value={this.state.description} onChange={this.handleTask} rows='5' className='textArea' type='textarea' placeholder='add new task here' />
+                <textarea value={this.state.description} onChange={this.handleTask} rows='5' className='textArea create-todo-text update-todo-text' type='textarea' placeholder='add new task here' />
 
                 <div className='select'>
-                    <select value={this.state.priority} onChange={this.handlePriority} id='dropdown-basic-button' className='form-control' placeholder='Select a Priority' required>
+                    <select value={this.state.priority} onChange={this.handlePriority} id='dropdown-basic-button' className='form-control create-todo-priority' placeholder='Select a Priority' required>
                         <option value='' disabled>Priorities</option>
                         <option value={'#F7F89C'}>Low Priority</option>
                         <option value={'#CCFF99'}>Medium Priority</option>
